@@ -27,11 +27,17 @@
                 <a class="post-title-link" href="{{url}}">{{title}}</a>
             </h2>
             <div class="post-meta">
+                {{#unless @custom.show_author}}
+                    <span class="post-meta-item">{{#foreach authors}}{{#if @first}}{{name}}{{else}}, {{name}}{{/if}}{{/foreach}}</span>
+                {{/unless}}
                 <span class="post-meta-item post-meta-date">
                     <time datetime="{{date format="YYYY-MM-DD"}}">{{date published_at}}</time>
                 </span>
                 {{#if reading_time}}
                     <span class="post-meta-item post-meta-length">{{reading_time}}</span>
+                {{/if}}
+                {{#if canonical_url}}
+                    <span class="post-meta-item">{{canonical_url}}</span>
                 {{/if}}
                 {{#if @site.comments_enabled}}
                     {{comment_count class="post-meta-item"}}
@@ -41,11 +47,12 @@
                 {{/primary_tag}}
             </div>
         </header>
-
+        {{#if @custom.show_excerpt}}
         {{#if excerpt}}
             <div class="post-excerpt">
                 {{excerpt words="33"}}
             </div>
+        {{/if}}
         {{/if}}
     </div>
 
