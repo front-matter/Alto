@@ -37,6 +37,7 @@
 
             {{#if access}}
                 {{#if @custom.license_url}}
+                    <hr>
                     <div class="gh-license">
                         Copyright © {{date format="YYYY"}} {{#foreach authors}}{{#if @first}}{{name}}{{else}}, {{name}}{{/if}}{{/foreach}}. Distributed under the terms of the
                         <a
