@@ -19,7 +19,7 @@
                     <span class="post-meta-item post-meta-length">{{reading_time}}</span>
                 {{/if}}
                 {{#if canonical_url}}
-                    <span class="post-meta-item">{{canonical_url}}</span>
+                    <span class="post-meta-item"><a href="{{canonical_url}}">{{canonical_url}}</a></span>
                 {{/if}}
                 {{#if @site.comments_enabled}}
                     {{comment_count class="post-meta-item"}}
