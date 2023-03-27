@@ -7,6 +7,42 @@
     <title>{{meta_title}}</title>
     <link rel="stylesheet" href="{{asset "built/screen.css"}}">
 
+    {{#post}}
+    <meta name="citation_doi" content="{{canonical_url}}">
+    <meta name="citation_title" content="{{title}}">
+    <meta name="citation_abstract" content="{{excerpt}}">
+    {{#foreach authors}}  
+    <meta name="citation_author" content="{{name}}">
+    {{/foreach}}
+    <meta name="citation_date" content="{{date format="YYYY-MM-DD"}}"/>
+    {{#foreach tags}}  
+    <meta name="citation_keywords" content="{{name}}"/>
+    {{/foreach}}
+    {{/post}}
+    <meta name="citation_journal_title" content="{{@site.title}}"/>
+    <meta name="citation_language" content="{{@site.locale}}">
+
+    {{#post}}
+    <meta name="dc.identifier" content="{{canonical_url}}">
+    {{#foreach authors}}  
+    <meta name="dc.creator" content="{{name}}" />
+    {{/foreach}}
+    <meta name="dc.title" content="{{title}}" />
+    <meta name="dc.description" content="{{excerpt}}" />
+    <meta name="dc.date" content="{{date format="YYYY-MM-DD"}}" />
+    {{#foreach tags}}
+    <meta name="dc.subject" content="{{name}}" />
+    {{/foreach}}
+    {{/post}}
+    <meta name="dc.language" content="{{@site.locale}}" />   
+    <meta name="dc.format" content="text/html" /> 
+    <meta name="dc.source" content="{{@site.title}}" />
+    <meta name="dc.type" content="article" />
+    
+    {{#if @custom.license_url}}
+    <meta name="dc.rights" content="{{@custom.license_url}}" />
+    {{/if}}
+
     {{ghost_head}}
 </head>
 

@@ -1,7 +1,7 @@
 {
     "name": "alto",
     "description": "A Ghost theme",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "private": true,
     "engines": {
         "ghost": ">=5.0.0"
@@ -92,6 +92,16 @@
             "show_related_posts": {
                 "type": "boolean",
                 "default": true,
+                "group": "post"
+            },
+            "license_text": {
+                "type": "text",
+                "default": "Creative Commons Attribution 4.0 License",
+                "group": "post"
+            },
+            "license_url": {
+                "type": "text",
+                "default": "https://creativecommons.org/licenses/by/4.0/legalcode",
                 "group": "post"
             }
         }
