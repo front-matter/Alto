@@ -21,13 +21,15 @@
 		{{#foreach tags}}
 		<category term="{{name}}"/>
 		{{/foreach}}
+        <media:content url="{{feature_image}}" medium="image"/>
+        <media:description>{{feature_image_caption}}</media:description>
 		<content type="html"><![CDATA[ {{content}} ]]></content>
-    {{#foreach authors}}
+        {{#foreach authors}}
 		<author>
 			<name>{{name}}</name>
 			<uri>{{website}}</uri>
 		</author>
-    {{/foreach}}
+        {{/foreach}}
 	</entry>
     {{/foreach}}
     {{/get}}
