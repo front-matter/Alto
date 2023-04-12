@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="{{@site.locale}}">
     <title><![CDATA[ {{@site.title}} ]]></title>
     <subtitle><![CDATA[ {{@site.description}} ]]></subtitle>
     <link rel="self" type="application/atom+xml" href="{{@site.url}}/atom/" />
     <link rel="alternate" type="text/html" href="{{@site.url}}" />
     <link rel="license" type="text/html" href="{{@custom.license_url}}" />
     <id>{{@site.url}}/atom/</id>
-    <language>{{@site.locale}}</language>
     <generator uri="https://ghost.org" version="5.40">Ghost</generator>
     <updated>{{date format="YYYY-MM-DDTHH:mm:ssZ"}}</updated>
 	
